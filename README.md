@@ -2,9 +2,9 @@
 
  
 ## Requirements
-All requirements are listed in the `requirements.txt`. Please use the following command to install all required packages in an individual environment:
-
 The code is written in PyTorch.
+
+All requirements are listed in the `requirements.txt`. Please use the following command to install all required packages in an individual environment:
 
 ```bash
 # clone this repo
