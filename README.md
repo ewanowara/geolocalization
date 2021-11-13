@@ -17,6 +17,21 @@ source glimpse_classification_env/bin/activate
 
 ## Reproduce Results
 
+#### download and preprocess training and validation images
+```bash
+wget https://github.com/TIBHannover/GeoEstimation/releases/download/v1.0/mp16_urls.csv -O resources/mp16_urls.csv
+wget https://github.com/TIBHannover/GeoEstimation/releases/download/pytorch/yfcc25600_urls.csv -O resources/yfcc25600_urls.csv 
+python download_images.py --output resources/images/mp16 --url_csv resources/mp16_urls.csv --shuffle
+python download_images.py --output resources/images/yfcc25600 --url_csv resources/yfcc25600_urls.csv --shuffle --size_suffix ""
+
+# assign cell(s) for each image using the original meta information
+wget https://github.com/TIBHannover/GeoEstimation/releases/download/v1.0/mp16_places365.csv -O resources/mp16_places365.csv
+wget https://github.com/TIBHannover/GeoEstimation/releases/download/pytorch/yfcc25600_places365.csv -O resources/yfcc25600_places365.csv
+python partitioning/assign_classes.py
+# remove images that were not downloaded 
+python filter_by_downloaded_images.py
+```
+
 #### Test on Already Trained Model
 
 To use the pre-trained model by default, first download the model checkpoint by running:
@@ -59,17 +74,3 @@ Available argparse parameter:
 python Train_ViT.py --cuda_base cuda:0
 ```
 
-#### download and preprocess training and validation images
-```bash
-wget https://github.com/TIBHannover/GeoEstimation/releases/download/v1.0/mp16_urls.csv -O resources/mp16_urls.csv
-wget https://github.com/TIBHannover/GeoEstimation/releases/download/pytorch/yfcc25600_urls.csv -O resources/yfcc25600_urls.csv 
-python download_images.py --output resources/images/mp16 --url_csv resources/mp16_urls.csv --shuffle
-python download_images.py --output resources/images/yfcc25600 --url_csv resources/yfcc25600_urls.csv --shuffle --size_suffix ""
-
-# assign cell(s) for each image using the original meta information
-wget https://github.com/TIBHannover/GeoEstimation/releases/download/v1.0/mp16_places365.csv -O resources/mp16_places365.csv
-wget https://github.com/TIBHannover/GeoEstimation/releases/download/pytorch/yfcc25600_places365.csv -O resources/yfcc25600_places365.csv
-python partitioning/assign_classes.py
-# remove images that were not downloaded 
-python filter_by_downloaded_images.py
-```
