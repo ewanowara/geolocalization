@@ -1,4 +1,4 @@
-from dataloader import MultiPartitioningClassifier, cuda_base, device_ids
+from dataloader_glimpse  import MultiPartitioningClassifier, cuda_base, device_ids
 import yaml
 
 with open('config/base_model.yml') as f:
