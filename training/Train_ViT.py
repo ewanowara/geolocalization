@@ -1,4 +1,4 @@
-from dataloader import MultiPartitioningClassifier, seg_channels, cuda_base, server, scenes, device_ids, num_epochs
+from dataloader_glimpse  import MultiPartitioningClassifier, seg_channels, cuda_base, server, scenes, device_ids, num_epochs
 import yaml
 from argparse import Namespace
 import torch
