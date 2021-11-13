@@ -34,7 +34,7 @@ python partitioning/assign_classes.py
 python setup/filter_by_downloaded_images.py
 ```
 
-#### Test on Already Trained Model
+#### Test with a Pre-trained Trained Model
 
 To use the pre-trained model by default, first download the model checkpoint by running:
 
