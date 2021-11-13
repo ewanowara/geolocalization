@@ -5,7 +5,7 @@
 All requirements are listed in the `requirements.txt`. Please use the following command to install all required packages in an individual environment:
 
 ### clone this repo
-git clone  && cd 
+git clone https://github.com/ewanowara/Geo-Localization.git && cd Geo-Localization
 
 ### Install dependencies
 ```bash
@@ -23,7 +23,7 @@ To use the pre-trained model by default, first download the model checkpoint by 
 
 ```
 mkdir -p saved_models
-wget  http...  saved_models/
+wget    saved_models/
 ```
 
 Inference with pre-trained model:
