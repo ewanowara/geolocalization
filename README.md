@@ -59,7 +59,7 @@ Available argparse parameter:
 python Train_ViT.py --cuda_base cuda:0
 ```
 
-# download and preprocess images
+#### download and preprocess training and validation images
 ```bash
 wget https://github.com/TIBHannover/GeoEstimation/releases/download/v1.0/mp16_urls.csv -O resources/mp16_urls.csv
 wget https://github.com/TIBHannover/GeoEstimation/releases/download/pytorch/yfcc25600_urls.csv -O resources/yfcc25600_urls.csv 
