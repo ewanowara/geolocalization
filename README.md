@@ -38,7 +38,7 @@ To use the pre-trained model by default, first download the model checkpoint by 
 
 ```
 mkdir -p saved_models
-wget    saved_models/
+wget https://www.dropbox.com/s/kqi5it6bexhzgmn/Saved_RGB_ViT.tar?dl=0   saved_models/Saved_RGB_ViT.tar
 ```
 
 Inference with pre-trained model:
