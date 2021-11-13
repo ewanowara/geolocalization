@@ -4,13 +4,15 @@
 ## Requirements
 All requirements are listed in the `requirements.txt`. Please use the following command to install all required packages in an individual environment:
 
+The code is written in PyTorch.
+
 ```bash
 # clone this repo
 git clone https://github.com/ewanowara/Geo-Localization.git && cd Geo-Localization
 
 # Install dependencies
 python3 -m venv glimpse_classification_env
-pip install -r requirements.txt
+pip install -r setup/requirements.txt
 source glimpse_classification_env/bin/activate 
 
 ```
@@ -21,15 +23,15 @@ source glimpse_classification_env/bin/activate
 ```bash
 wget https://github.com/TIBHannover/GeoEstimation/releases/download/v1.0/mp16_urls.csv -O resources/mp16_urls.csv
 wget https://github.com/TIBHannover/GeoEstimation/releases/download/pytorch/yfcc25600_urls.csv -O resources/yfcc25600_urls.csv 
-python download_images.py --output resources/images/mp16 --url_csv resources/mp16_urls.csv --shuffle
-python download_images.py --output resources/images/yfcc25600 --url_csv resources/yfcc25600_urls.csv --shuffle --size_suffix ""
+python setup/download_images.py --output resources/images/mp16 --url_csv resources/mp16_urls.csv --shuffle
+python setup/download_images.py --output resources/images/yfcc25600 --url_csv resources/yfcc25600_urls.csv --shuffle --size_suffix ""
 
 # assign cell(s) for each image using the original meta information
 wget https://github.com/TIBHannover/GeoEstimation/releases/download/v1.0/mp16_places365.csv -O resources/mp16_places365.csv
 wget https://github.com/TIBHannover/GeoEstimation/releases/download/pytorch/yfcc25600_places365.csv -O resources/yfcc25600_places365.csv
 python partitioning/assign_classes.py
 # remove images that were not downloaded 
-python filter_by_downloaded_images.py
+python setup/filter_by_downloaded_images.py
 ```
 
 #### Test on Already Trained Model
@@ -44,7 +46,7 @@ wget https://www.dropbox.com/s/kqi5it6bexhzgmn/Saved_RGB_ViT.tar?dl=0   saved_mo
 Inference with pre-trained model:
 
 ```bash
-python Test_ViT.py --cuda_base cuda:0
+python tests/Test_ViT.py --cuda_base cuda:0
 ```
 
 Available argparse parameter:
@@ -71,7 +73,7 @@ Available argparse parameter:
 #### Train from Scratch on Already Trained Model
 
 ```bash
-python Train_ViT.py --cuda_base cuda:0
+python training/Train_ViT.py --cuda_base cuda:0
 ```
 
 ## Details About the Approach
