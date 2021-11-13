@@ -70,7 +70,7 @@ Available argparse parameter:
    which geo-cell partitioning to use for training and validation - coarse (largest cells - 3298 total), middle (7202 total), fine (smallest cells 12893 total)
 ```
 
-#### Train from Scratch on Already Trained Model
+#### Train the Model from Scratch
 
 ```bash
 python Train_ViT.py --cuda_base cuda:0
