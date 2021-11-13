@@ -51,6 +51,7 @@ python Test_ViT.py --cuda_base cuda:0
 
 Available argparse parameter:
 ```bash
+```
 --seg_channels
   number of semantic segmentation channels (default: 3)
 
@@ -68,6 +69,7 @@ Available argparse parameter:
    
  --s2_cells 
    which geo-cell partitioning to use for training and validation - coarse (largest cells - 3298 total), middle (7202 total), fine (smallest cells 12893 total)
+```
 ```
 
 #### Train the Model from Scratch
