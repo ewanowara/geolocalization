@@ -46,7 +46,7 @@ wget https://www.dropbox.com/s/kqi5it6bexhzgmn/Saved_RGB_ViT.tar?dl=0   saved_mo
 Inference with pre-trained model:
 
 ```bash
-python tests/Test_ViT.py --cuda_base cuda:0
+python Test_ViT.py --cuda_base cuda:0
 ```
 
 Available argparse parameter:
@@ -73,7 +73,7 @@ Available argparse parameter:
 #### Train from Scratch on Already Trained Model
 
 ```bash
-python training/Train_ViT.py --cuda_base cuda:0
+python Train_ViT.py --cuda_base cuda:0
 ```
 
 ## Details About the Approach
